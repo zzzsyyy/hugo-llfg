@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+{{ $paginator := .Paginate (where (where .Site.Pages "Type" "post") "IsPage" true) }}
+{{ range $paginator.Pages }}
+<div class="columns">
+    <div class="column is-four-fifths">
+        <a href="{{ .Permalink }}">
+            <div class="title is-size-4">
+                {{ .Title }}
+            </div>
+        </a>
+    </div>
+    <div class="column is-right is-vertical-center subtitle">
+        {{ .Date.Format "2006-01-02" }}
+    </div>
+</div>
+<hr>
+{{ end }}
+
+{{ $.Scratch.Set "paginator" $paginator }}
+
+{{ end }}

@@ -1,0 +1,12 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="preconnect" href="https://cdn.jsdelivr.net"> -->
+<meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description }}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}">
+<meta name="keyword" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}">
+<meta name="robots" content="noodp">
+
+{{ $defaultStyles := resources.Get "css/style.scss" | resources.ToCSS }}
+<link rel="stylesheet" href="{{ $defaultStyles.Permalink }}">
+
+</head>

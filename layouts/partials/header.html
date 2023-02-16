@@ -1,0 +1,23 @@
+<!-- header.html -->
+<header class="header">
+    <nav class="navbar container">
+        <div class="navbar-logo">
+            {{ if ( ne .Site.Title "" ) }}
+            <a class="navbar-item" href="{{ .Site.BaseURL | relLangURL }}">
+                <h1>{{ .Site.Title }} </h1>
+            </a>
+            {{ end }}
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                {{ range .Site.Menus.main }}
+                {{ $url := .URL | relLangURL }}
+                <a class="navbar-item" href="{{ $url }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
+        </div>
+        <div class="navbar-end">
+            <a class="navbar-item" ></a>
+        </div>
+    </nav>
+</header>

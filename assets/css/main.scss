@@ -1,0 +1,30 @@
+a {
+    text-decoration: none;
+}
+
+html {
+    height: 100%;
+    font-size: 15px;
+    line-height: 1.15;
+    // font-family: Inter, -apple-system, BlinkMacSystemFont, "Noto Sans SC", "Noto Sans JP", sans-serif;
+    background-color: $color-body;
+    scroll-behavior: smooth;
+    color: $color-font;
+}
+
+body {
+    margin: 0;
+    background-color: $color-body;
+    display: flex;
+    overflow-x: hidden;
+    min-height: 100%;
+    flex-direction: column;
+    color: $color-font;
+    font-size: 15px;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.25em;
+    // margin: 0.67em 0;
+}

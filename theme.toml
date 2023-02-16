@@ -1,0 +1,12 @@
+name = "hugo-llfg"
+license = "MIT"
+licenselink = "https://codeberg.com/zzzsy/hugo-llfg/blob/master/LICENSE"
+description = ""
+homepage = "http://example.com/"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "zzzsy"
+  homepage = "https://zzzsy.top"
