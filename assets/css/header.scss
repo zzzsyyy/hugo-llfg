@@ -10,26 +10,25 @@
     flex: 0 0 auto;
 
     .navbar {
-        height: 3rem;
+        height: 4.25rem;
         padding: 5px;
         display: flex;
         position: relative;
 
         &-logo {
             flex: 0 0 auto;
-            font-size: 20px;
             font-weight: 500;
 
             h1 {
                 margin: 0;
-                font-size: 1.25rem
+                font-size: 2rem
             }
         }
 
         &-item {
             display: inline-block;
-            height: 46px;
-            line-height: 52px;
+            height: 38px;
+            line-height: 42px;
             padding: 0 10px;
             border-radius: 4px;
             cursor: pointer;
@@ -40,9 +39,32 @@
             margin-left: 2px;
 
             &:hover {
-                color: var(--color-font);
-                background-color: var(--color-bg-hover);
+                color: $color-font;
+                background-color: $color-bg-hover;
                 text-decoration: none
+            }
+
+            &:active {
+                background-color: $color-bg-active;
+            }
+
+            &-active {
+                color: $color-primary;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: 60%;
+                    left: 50%;
+                    margin-top: -5px;
+                    transform: translate(-50%);
+                    height: 2px;
+                    background-color: $color-primary
+                }
+            }
+            i{
+                margin-top: 1.5rem;
             }
         }
 
@@ -50,6 +72,7 @@
             flex: 1 1 auto;
             display: flex;
             justify-content: space-between;
+            font-size: 1.5em;
         }
     }
 
