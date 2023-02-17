@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main class="main">
+    <div class="container">
+        <div class="missing-card">
+            <div class="missing-message">
+                404 - {{ $.Site.Params.missingContentMessage | default "Page not found..." }}
+            </div>
+            <!-- <a class="missing-return" href="{{ " /" | absURL }}">
+                {{ $.Site.Params.missingReturnLable | default "Return to home page"}}
+            </a> -->
+        </div>
+    </div>
+</main>
+{{ end }}

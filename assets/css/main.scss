@@ -1,33 +1,11 @@
-a {
-    text-decoration: none;
-}
-
-i{
-    font-size: 1.6rem;
-}
-
-html {
-    height: 100%;
-    line-height: 1.15;
-    // font-family: Inter, -apple-system, BlinkMacSystemFont, "Noto Sans SC", "Noto Sans JP", sans-serif;
-    background-color: $color-body;
-    scroll-behavior: smooth;
-    color: $color-font;
-    font-size: 62.5%;
-}
-
-body {
-    margin: 0;
-    background-color: $color-body;
-    display: flex;
-    overflow-x: hidden;
-    min-height: 100%;
-    flex-direction: column;
-    color: $color-font;
-    position: relative;
-}
-
-h1 {
-    font-size: 1.25rem;
-    // margin: 0.67em 0;
+.main{
+    flex: 1 1 auto;
+    z-index: 3;
+    .container{
+        display: flex;
+        .content{
+            flex: 1 1 80%;
+            max-width: 80%;
+        }
+    }
 }
