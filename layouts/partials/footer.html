@@ -1,10 +1,26 @@
 <footer class="footer">
-    <div class="container">
-        <div class="footer-wrap">
-            <p class="footer-text">
-                <!---@TODO --->
-                ©2023  | CC BY-NC 4.0 | Powered by Hugo
-            </p>
-        </div>
+  <div class="container">
+    <div class="footer-wrap">
+      <p class="footer-text">
+        &copy;
+        {{ if (and .Site.Params.since (lt .Site.Params.since now.Year)) }}{{ .Site.Params.since }} - {{ end }}
+        {{ now.Year }}
+        {{ $author := .Site.Params.author }}
+        {{ $authorlink := .Site.Params.authorlink }}
+        {{ if $author }}
+        {{ if $authorlink }}
+        <a href="{{ $authorlink }}" {{ if ne $authorlink .Site.BaseURL }} target="_blank"
+          rel="noopener noreferrer" {{ end }}>{{ $author }}</a> |
+        {{ else }}
+        {{ $author }} |
+        {{ end }}
+        {{ end }}
+        {{ if .Site.Params.beian }}
+        <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">{{
+          .Site.Params.beian }}</a> |
+        {{ end }}
+        Powered by <a class="footer-hugo" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+      </p>
     </div>
+  </div>
 </footer>

@@ -6,7 +6,7 @@
 <meta name="keyword" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}">
 <meta name="robots" content="noodp">
 
-{{ $defaultStyles := resources.Get "css/style.scss" | resources.ToCSS }}
+{{ $defaultStyles := resources.Get "css/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $defaultStyles.Permalink }}">
 
 

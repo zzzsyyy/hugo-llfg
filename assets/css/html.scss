@@ -1,5 +1,6 @@
 a {
     text-decoration: none;
+    background-color:transparent;
 }
 
 i{
@@ -14,7 +15,7 @@ html {
     height: 100%;
     line-height: 1.15;
     // font-family: Inter, -apple-system, BlinkMacSystemFont, "Noto Sans SC", "Noto Sans JP", sans-serif;
-    background-color: $color-body;
+    // background-color: $color-body;
     scroll-behavior: smooth;
     color: $color-font;
     font-size: 62.5%;
