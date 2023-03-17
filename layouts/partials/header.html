@@ -13,12 +13,14 @@
                 {{ $relPermalink := .RelPermalink }}
                 {{ range .Site.Menus.main }}
                 {{ $url := .URL | relLangURL }}
-                <a class="navbar-item {{ if hasPrefix $relPermalink $url }} navbar-item-active {{ end }}" href="{{ $url }}">{{ .Name }}</a>
+                {{ $matchPage := hasPrefix $relPermalink $url}}
+                <a class="navbar-item {{ if $matchPage }} navbar-item-active {{ end }}" href="{{ $url }}">{{ .Name
+                    }}</a>
                 {{ end }}
             </div>
         </div>
         <div class="navbar-end">
-            <a class="navbar-item" >
+            <a class="navbar-item">
                 <i class="fas fa-moon"></i>
             </a>
             <a class="navbar-item" href="/index.xml">

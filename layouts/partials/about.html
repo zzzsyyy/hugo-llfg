@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+<div class="avatar">
+    {{ $avatar := (.context.Resources.ByType "image").getMatch "avatar.webp"}}
+    <img src="{{ $avatar.Permalink | absURL }}" alt="avatar"/>
+</div>
+
+
+<div class="content">
+    {{ .Content }}
+  </div>
+{{ end }}

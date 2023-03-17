@@ -1,3 +1,20 @@
 {{ define "main" }}
-
+<main>
+    <div class="post_bg">
+        <div class="post_container">
+            <div class="post_content">
+                <div class="post_title">
+                    <h2>{{ .Title }}</h2>
+                </div>
+                {{ partial "metadata" . }}
+                <article class="markdown">
+                    {{ .Content }}
+                </article>
+                {{ with .GetTerms "about" }}
+                {{ partial "about" . }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</main>
 {{ end }}

@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main>
+  <div class="list_bg">
+    <article>
+      <h1 class="title">{{ .Title }}</h1>
+    </article>
+    <div class="list_container">
+      <div class="list_content">
+        {{ range .Paginator.Pages }}
+        <div class="list_item_wrap">
+          <div class="list_item">
+            <div>
+              <div class="list_item_title">
+                <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+              </div>
+              <div class="list_item_summary">
+                {{ .Summary | plainify }}
+              </div>
+              {{ partial "metadata" . }}
+            </div>
+          </div>
+        </div>
+
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  {{ template "_internal/pagination.html" . }}
+  </div>
+</main>
+{{ end }}

@@ -1,0 +1,39 @@
+<div class="post_meta">
+    <div class="post_meta_item">
+        <i class="fas fa-calendar"></i>
+        <span>{{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}</span>
+    </div>
+    <div class="post_meta_item">
+        <i class="fas fa-book-open"></i>
+        <span>{{- printf "%d 字" .WordCount -}}</span>
+    </div>
+    <div class="post_meta_item">
+        <i class="fas fa-clock"></i>
+        <span>{{- printf "%d 分钟" .ReadingTime -}}</span>
+    </div>
+
+    {{ with .GetTerms "categories" }}
+    <div class="post_meta_item">
+        <i class="fas fa-folder"></i>
+        {{ range $index, $value := . }}
+        {{ if gt $index 0 }}
+        <span>, </span>
+        {{ end -}}
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{ with .GetTerms "series" }}
+    <div class="post_meta_item">
+        <i class="fas fa-th-list"></i>
+        {{ range $index, $value := . }}
+        {{ if gt $index 0 }}
+        <span>, </span>
+        {{ end -}}
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+</div>
