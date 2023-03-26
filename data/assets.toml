@@ -1,0 +1,15 @@
+# highlight.js
+[highlightjs]
+  version = "11.7.0"
+
+  [highlightjs.css]
+    url = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/styles/panda-syntax-light.min.css"
+
+  [highlightjs.js]
+    url = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/highlight.min.js"
+
+[fontawesome]
+    rev = "740148ed2e"
+
+    [fontawesome.js]
+      url = "https://kit.fontawesome.com/%s.js"

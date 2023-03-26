@@ -1,16 +1,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="preconnect" href="https://cdn.jsdelivr.net"> -->
-<meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description }}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}">
-<meta name="keyword" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}">
-<meta name="robots" content="noodp">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <meta name="description"
+        content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description }}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}">
+    <meta name="keyword" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}">
+    <meta name="robots" content="noodp">
 
-    {{ $defaultStyles := resources.Get "styles/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha256"
-    }}
+    {{ $defaultStyles := resources.Get "styles/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha256"}}
     <link rel="stylesheet" href="{{ $defaultStyles.Permalink }}">
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
+    {{ $assets := .Site.Data.assets }}
+    <link rel="stylesheet" href="{{ printf $assets.highlightjs.css.url $assets.highlightjs.version }}" media="print" onload="this.media='all';this.onload=null" crossorigin>
+    <script defer src="{{ printf $assets.highlightjs.js.url $assets.highlightjs.version }}" crossorigin></script>
+    <script defer src="{{ printf $assets.fontawesome.js.url $assets.fontawesome.rev }}" crossorigin="anonymous"></script>
 </head>

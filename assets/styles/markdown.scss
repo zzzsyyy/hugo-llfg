@@ -1,0 +1,78 @@
+.markdown {
+    &>*{
+        margin-bottom: 1.6rem;
+    }
+    h2 {
+        line-height: 1.25;
+        border-bottom-width: 1px;
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        margin-top: 2.5rem;
+        padding-bottom: 1rem;
+        color: $color-font;
+    }
+
+    h3 {
+        line-height: 1.375;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        margin-top: 2.5rem;
+        color: $color-font;
+    }
+
+    pre {
+        background-color: $color-bg-tri;
+        border-radius: 0.4rem;
+        padding: 1.6rem;
+
+        code {
+            display: block;
+            background-color: transparent;
+            padding: 0;
+            overflow: auto;
+            border-radius: 0;
+        }
+    }
+
+    code {
+        font-size: 1.4rem;
+        color: $color-text-tertiary;
+        font-family: "Cascadia Code", "SF Mono", "Consolas", -apple-system, "PingFang SC", "Source Han Sans SC", monospace;
+        display: inline;
+        background-color: $color-bg-tri;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    strong {
+        font-weight: 600;
+        color: $color-text-sec;
+    }
+
+    blockquote {
+        font-size: 1.6rem;
+        border-left-width: 4px;
+        border-color: $color-text-tertiary;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        color: $color-text-tertiary;
+    }
+
+    sub,
+    sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+}

@@ -1,29 +1,48 @@
-a {
-    text-decoration: none;
-    background-color:transparent;
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e2e8f0;
 }
 
-i{
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+i {
     font-size: 1.6rem;
 }
 
-h1, h2,h3,h4,h5,h6,p{
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
 html {
-    height: 100%;
     line-height: 1.15;
-    // font-family: Inter, -apple-system, BlinkMacSystemFont, "Noto Sans SC", "Noto Sans JP", sans-serif;
-    // background-color: $color-body;
     scroll-behavior: smooth;
-    color: $color-font;
+    // color: $color-font;
     font-size: 62.5%;
 }
 
 body {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     background-color: $color-body;
     display: flex;
     overflow-x: hidden;
@@ -33,28 +52,72 @@ body {
     position: relative;
 }
 
-h1 {
-    font-size: 2rem;
-    // margin: 0.67em 0;
+b,
+strong {
+    font-weight: bolder;
 }
 
-.pagination{
+small {
+    font-size: 80%;
+}
+
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+}
+
+.pagination {
     display: flex;
     justify-content: center;
-    .page-item{
+
+    .page-item {
         display: flex;
         align-items: center;
-        .page-link{
+
+        .page-link {
             margin: 1rem;
             padding: 1rem;
         }
     }
 }
-ol,ul{
+
+ol,
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-button,[role="button"]{
+
+button,
+[role="button"] {
     cursor: pointer;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
 }
