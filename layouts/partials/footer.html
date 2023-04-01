@@ -9,8 +9,7 @@
         {{ $authorlink := .Site.Params.authorlink }}
         {{ if $author }}
         {{ if $authorlink }}
-        <a href="{{ $authorlink }}" {{ if ne $authorlink .Site.BaseURL }} target="_blank" rel="noopener noreferrer" {{
-          end }}>{{ $author }}</a> |
+        <a href="{{ $authorlink }}" {{ if ne $authorlink .Site.BaseURL }} target="_blank" rel="noopener noreferrer" {{ end }}>{{ $author }}</a> |
         {{ else }}
         {{ $author }} |
         {{ end }}
