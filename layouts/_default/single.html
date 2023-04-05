@@ -3,15 +3,17 @@
     <div class="post_bg">
         <div class="post_container">
             <div class="post_content">
-                <div class="post_title">
-                    <h2>{{ .Title }}</h2>
-                </div>
-                {{ partial "metadata" . }}
+                <header>
+                    <div class="post_title">
+                        <h1>{{ .Title }}</h1>
+                    </div>
+                    {{ partial "metadata" . }}
+                </header>
                 <article class="markdown">
                     {{ .Content }}
                 </article>
                 {{ with .GetTerms "about" }}
-                {{ partial "about" . }}
+                    {{ partial "about" . }}
                 {{ end }}
             </div>
         </div>

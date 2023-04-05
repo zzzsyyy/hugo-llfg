@@ -4,6 +4,10 @@
     font-weight: 700;
 }
 
+i{
+    padding-right: 0.5rem;
+}
+
 .post_bg,
 .list_bg {
     padding-left: 2.5rem;
@@ -15,12 +19,14 @@
     display: grid;
     gap: 1rem;
     padding-top: 3rem;
-    // grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .post_content,
 .list_content {
     grid-column: span 6/span 6;
+    // grid-column-start: auto;
+    // grid-column-end: auto;
     padding: 2rem 1.5rem 2rem 1.5rem;
     border-radius: 0.6rem;
     background-color: $color-bg;

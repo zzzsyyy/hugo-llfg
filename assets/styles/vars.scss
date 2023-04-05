@@ -1,7 +1,7 @@
 /* COLOR VARIABLES */
 $color-bg: white;
 $color-body: #f2f2f2;
-$color-font: #24292f;
+$color-font: #37475b;
 $color-bg-hover: #f2f2f2;
 $color-bg-active: #e6e6e6;
 $color-primary: #8aa2d3;
@@ -10,10 +10,3 @@ $box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 $color-text-tertiary: rgba(0,0,0,0.55);
 $color-text-sec: rgba(0,0,0,0.7);
 $color-bg-tri: rgba(242,242,247,1);
-
-@font-face {
-    font-family: "Cascadia Code";
-    font-style: normal;
-    font-display: swap;
-    src: local("Cascadia Code Regular"), url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@2/cascadia-code/cascadia-code.woff2") format("woff2");
-  }
