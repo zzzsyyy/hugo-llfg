@@ -1,17 +1,44 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ hugo.Generator }}
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <meta name="description"
         content="{{ if .IsHome }}{{ $.Site.Params.Subtitle }}{{ else if .Description }}{{ .Description | plainify }}{{ else }}{{ .Summary | plainify }}{{ end }}">
     <meta name="keyword" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}">
     <meta name="robots" content="noodp">
 
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
     {{ $defaultStyles := resources.Get "styles/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha256"}}
     <link rel="stylesheet" href="{{ $defaultStyles.Permalink }}">
 
     {{ $assets := .Site.Data.assets }}
-    <link rel="stylesheet" href="{{ printf $assets.highlightjs.css.url $assets.highlightjs.version }}" media="print" onload="this.media='all';this.onload=null" crossorigin>
-    <script defer src="{{ printf $assets.highlightjs.js.url $assets.highlightjs.version }}" crossorigin></script>
-    <script defer src="{{ printf $assets.fontawesome.js.url $assets.fontawesome.rev }}" crossorigin="anonymous"></script>
+    <script defer src="{{ printf $assets.prismjs.js.url $assets.prismjs.version }}" crossorigin="anonymous"></script>
+    <script defer src="{{ printf $assets.prismjs.autoRender.url $assets.prismjs.version }}" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ printf $assets.prismjs.css.url $assets.prismjs.version }}" crossorigin="anonymous">
+    <script defer src="{{ printf $assets.fontawesome.js.url $assets.fontawesome.rev }}"
+        crossorigin="anonymous"></script>
+    {{ if .Params.math }}
+    <link rel="stylesheet" href="{{ printf $assets.katex.css.url $assets.katex.version }}" crossorigin="anonymous">
+    <script defer src="{{ printf $assets.katex.js.url $assets.katex.version }}" crossorigin="anonymous"></script>
+    <script defer src="{{ printf $assets.katex.autoRender.url $assets.katex.version }}" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ],
+                ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'option'],
+            });
+        });
+    </script>
+    {{ end }}
+    {{ if hugo.IsProduction }}
+    {{ with .Site.Params.umami }}
+      <link rel="preconnect" href="//{{ index .url 2 }}">
+    <script async defer data-website-id="{{ .websiteId }}" src="{{ .url }}"></script>
+  {{ end }}
+  {{ end }}
 </head>

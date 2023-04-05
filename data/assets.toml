@@ -1,15 +1,25 @@
-# highlight.js
-[highlightjs]
-  version = "11.7.0"
+[prismjs]
+version = "1.29.0"
 
-  [highlightjs.css]
-    url = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/styles/panda-syntax-light.min.css"
-
-  [highlightjs.js]
-    url = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/highlight.min.js"
+  [prismjs.css]
+    url = "https://cdn.jsdelivr.net/npm/prismjs@%s/themes/prism.min.css"
+  [prismjs.js]
+    url = "https://cdn.jsdelivr.net/npm/prismjs@%s/components/prism-core.min.js"
+  [prismjs.autoRender]
+    url = "https://cdn.jsdelivr.net/npm/prismjs@%s/plugins/autoloader/prism-autoloader.min.js"
 
 [fontawesome]
     rev = "740148ed2e"
 
     [fontawesome.js]
       url = "https://kit.fontawesome.com/%s.js"
+
+[katex]
+    version = "0.16.4"
+
+    [katex.css]
+      url = "https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css"
+    [katex.js]
+      url = "https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.js"
+    [katex.autoRender]
+      url = "https://cdn.jsdelivr.net/npm/katex@%s/dist/contrib/auto-render.min.js"
