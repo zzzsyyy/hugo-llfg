@@ -1,7 +1,8 @@
 .markdown {
-    &>*{
+    &>* {
         margin-bottom: 1.6rem;
     }
+
     h2 {
         line-height: 1.25;
         border-bottom-width: 1px;
@@ -75,4 +76,19 @@
     sup {
         top: -0.5em;
     }
+
+    ul,
+    ol {
+        padding-left: 2rem;
+        line-height: 1.6;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        list-style-type: disc;
+        &>li::marker{
+            color: $color-text-tertiary;
+            font-weight: 400;
+        }
+    }
+
+
 }
