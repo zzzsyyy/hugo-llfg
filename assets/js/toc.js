@@ -1,5 +1,5 @@
 function activateNavElementOnScroll() {
-    const headers = document.querySelectorAll('.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6');
+    const headers = document.querySelectorAll('.markdown h1, .markdown h2, .markdown h3');
     const headerLinks = document.querySelectorAll('.post_toc li a');
     const headerLinksArray = Array.from(headerLinks);
   
