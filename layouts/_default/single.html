@@ -7,15 +7,13 @@
                     <div class="post_title">
                         <h1>{{ .Title }}</h1>
                     </div>
-                    {{ partial "metadata" . }}
+                    {{- partial "metadata" . -}}
                 </header>
                 <article class="markdown">
                     {{ .Content }}
                 </article>
-                {{ with .GetTerms "about" }}
-                    {{ partial "about" . }}
-                {{ end }}
             </div>
+            {{- partial "toc" . -}}
         </div>
     </div>
 </main>

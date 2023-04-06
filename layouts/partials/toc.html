@@ -1,0 +1,15 @@
+{{ if .Params.toc }}
+<aside class="post_toc prose sticky">
+    <header>
+        <h3>目录</h3>
+    </header>
+    <div id="sticky_toc">
+        {{ .TableOfContents }}
+    </div>
+</aside>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        activateNavElementOnScroll();
+    });
+  </script>
+{{ end }}

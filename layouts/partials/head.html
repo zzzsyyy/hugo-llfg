@@ -9,8 +9,11 @@
     <meta name="robots" content="noodp">
 
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
-    {{ $defaultStyles := resources.Get "styles/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha256"}}
+    {{ $defaultStyles := resources.Get "styles/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha384"}}
     <link rel="stylesheet" href="{{ $defaultStyles.Permalink }}">
+
+    {{ $tocJs := resources.Get "js/toc.js" | resources.ExecuteAsTemplate "toc.js" . | minify | fingerprint }}
+    <script src="{{ $tocJs.RelPermalink }}" type="text/javascript"></script>
 
     {{ $assets := .Site.Data.assets }}
     <script defer src="{{ printf $assets.prismjs.js.url $assets.prismjs.version }}" crossorigin="anonymous"></script>
