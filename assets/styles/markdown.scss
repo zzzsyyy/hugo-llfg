@@ -23,20 +23,20 @@
         color: $color-font;
     }
 
-    pre{
-        background-color: $color-bg-tri;
+    pre {
+        background-color: #fafafa !important;
         border-radius: 0.4rem;
-        padding: 1rem !important;
+        padding: 0 !important;
         position: relative;
-        margin: 0 !important;
+        margin: 1.5rem 0 !important;
         white-space: pre-wrap;
 
         &::before {
             content: attr(data-lang);
             position: absolute;
             right: 1rem;
-            top: 1rem;
-            font-size: 2.5rem;
+            top: 0.6rem;
+            font-size: 2.8rem;
             font-weight: 700;
             color: #64778b;
             opacity: .25;
@@ -44,8 +44,12 @@
 
         code {
             display: block;
+            font-size: 1.5rem;
+            scrollbar-width: thin;
+            color: currentColor;
+            margin: 0;
             background-color: transparent;
-            padding: 0;
+            padding: .75rem 1.25rem;
             overflow: auto;
             border-radius: 0;
         }
@@ -93,13 +97,19 @@
         top: -0.5em;
     }
 
-    ul,
-    ol {
+    ul {
         padding-left: 2rem;
         line-height: 1.6;
-        margin-top: 0;
-        margin-bottom: 1.5rem;
-        list-style-type: disc;
+        margin: 0;
+        list-style: disc;
+
+        ul {
+            list-style: circle;
+
+            ul {
+                list-style: square;
+            }
+        }
 
         &>li::marker {
             color: $color-text-tertiary;
@@ -107,5 +117,68 @@
         }
     }
 
+    ol {
+        list-style-type: decimal;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+        margin: 0;
+    }
+
+    del {
+        text-decoration: line-through;
+    }
+
+    table {
+        scrollbar-width: thin;
+        box-sizing: border-box;
+        border-collapse: collapse;
+        border-width: 1.2px;
+        border-style: solid;
+        word-break: break-word;
+        border-color: #e3e6eb;
+        overflow: auto;
+        border-spacing: 0;
+        width: max-content;
+        margin: .75rem 1rem 1.5rem;
+        display: table;
+    }
+
+    tbody>tr:nth-child(2n+1) {
+        background-color: #f4f5f7;
+    }
+
+    th {
+        font-weight: 700;
+        color: #475c6e;
+    }
+
+    td,
+    th {
+        padding: .375rem .5rem;
+        border: 1px solid #e3e6eb;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+
+        &.lazyload {
+            transition: filter .35s ease 0s; // blur
+
+            &:not(.loaded) {
+                -webkit-filter: blur(5px);
+                filter: blur(5px);
+
+                &:not(.loading) {
+                    padding-bottom: 52.286%;
+                }
+            }
+        }
+    }
 
 }

@@ -1,19 +1,25 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: #e2e8f0;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e2e8f0;
+}
+
+* {
+    transition: background-color .1s ease-in-out;
 }
 
 a {
     text-decoration: none;
     background-color: transparent;
-}
-
-i {
-    font-size: 1.6rem;
+    // color:var(--link);
+    cursor: pointer;
+    // :hover{
+    //     text-decoration: underline;
+    //     color: aquamarine;
+    // }
 }
 
 pre,
@@ -28,28 +34,47 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
-    margin: 0;
+h6 {
+    line-height: 1;
+    margin: 1.4em 0 .8em;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5,
+h6 {
+    font-size: 1em;
 }
 
 html {
-    line-height: 1.15;
     scroll-behavior: smooth;
-    // color: $color-font;
     font-size: 62.5%;
 }
 
 body {
+    -webkit-font-smoothing: antialiased;
     margin: 0;
     font-size: 1.6rem;
     background-color: $color-body;
-    display: flex;
+    display: block;
     overflow-x: hidden;
-    min-height: 100%;
-    flex-direction: column;
     color: $color-font;
-    position: relative;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 b,
@@ -99,29 +124,17 @@ button,
 blockquote,
 dl,
 dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 hr,
 figure,
 p,
 pre {
-  margin: 0;
+    margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
+// p, pre, ul, ol, dl, form, hr {
+    // margin:1em 0 0.6em;
+// }
 
-.token.operator{
+.token.operator {
     background: none !important;
 }
