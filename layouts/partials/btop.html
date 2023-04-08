@@ -1,0 +1,9 @@
+<div class="back-to-top" id="back_to_top">
+    <span><i class="fas fa-arrow-up"></i></span>
+    <span class="scrollpercent">
+        <span id="back_to_top_text">0</span>%
+    </span>
+</div>
+</div>
+{{ $topJs := resources.Get "js/top.js" | resources.ExecuteAsTemplate "top.js" . | minify | fingerprint }}
+<script defer src="{{ $topJs.RelPermalink }}" type="text/javascript"></script>

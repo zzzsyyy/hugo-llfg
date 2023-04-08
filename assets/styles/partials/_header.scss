@@ -1,0 +1,82 @@
+.header {
+    position: sticky;
+    background-color: $color-bg;
+    box-shadow: $box-shadow;
+    top: 0;
+    z-index: 5;
+    user-select: none;
+    flex: none;
+
+    .navbar {
+        height: 5.25rem;
+        padding: .5rem;
+        display: flex;
+        position: relative;
+
+        &-logo {
+            margin-left: 4rem;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        &-item {
+            font-weight: $weight-medium;
+            display: inline-block;
+            height: 4.2rem;
+            line-height: 4.5rem;
+            padding: 0 1rem;
+            border-radius: $radius-sm;
+            cursor: pointer;
+            color: inherit;
+            position: relative;
+            transition: background-color 100ms ease;
+            background-color: transparent;
+
+            &:hover {
+                color: $color-primary;
+                text-decoration: none;
+            }
+
+            &-active {
+                color: $color-primary;
+            }
+        }
+
+        &-menu {
+            flex: auto;
+            display: flex;
+            justify-content: space-between;
+
+            &-start {
+                margin-left: 4rem;
+            }
+
+            &-end {
+                margin-right: 4rem;
+            }
+        }
+    }
+}
+
+.navbar-logo>.navbar-item {
+    @extend .navbar-item;
+
+    &:hover {
+        color: inherit;
+    }
+}
+
+@mixin indice{
+    &::after {
+        content: '';
+        position: absolute;
+        // top: 0;
+        width: 55%;
+        left: 50%;
+        transform: translate(-50%);
+        height: .2rem;
+        background-color: $color-primary;
+    }
+}

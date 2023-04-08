@@ -1,0 +1,89 @@
+* {
+    border-color: #e2e8f0;
+    transition: background-color .1s ease-in-out;
+}
+
+%html_body{
+    font-size: $font-md;
+    font-family: $family-body;
+    background-color: var(--color-body);
+    color: var(--color-font);
+}
+
+html {
+    @extend %html_body;
+    height: 100%;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @extend %html_body;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+@each $header, $size in $md-title-font-size {
+    #{$header} {
+        font-size: $size;
+        font-weight: 600;
+        color: var(--font-color-title);
+        line-height: 1;
+    }
+}
+
+
+body {
+    background-color: $color-body;
+    color: $font-color-text;
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+[role="button"] {
+    cursor: pointer;
+}
+
+p, pre, ul, ol, dl, form, hr {
+    margin:1rem 0 .6rem;
+}
+
+
+/* .anchorjs-link {
+    font-weight: $weight-bold;
+    padding-left: .3rem;
+    font-size: $font-lg;
+    opacity: 0;
+    margin-top: .1rem;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+    &:before {
+      content: "#";
+    }
+  } */

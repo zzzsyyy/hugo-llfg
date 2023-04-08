@@ -1,6 +1,6 @@
 <!-- header.html -->
 <header class="header">
-    <nav class="navbar container">
+    <nav class="navbar">
         <div class="navbar-logo">
             {{ if ( ne .Site.Title "" ) }}
             <a class="navbar-item" href="{{ .Site.BaseURL | relLangURL }}">
@@ -9,23 +9,22 @@
             {{ end }}
         </div>
         <div class="navbar-menu">
-            <div class="navbar-start">
+            <div class="navbar-menu-start">
                 {{ $relPermalink := .RelPermalink }}
                 {{ range .Site.Menus.main }}
                 {{ $url := .URL | relLangURL }}
                 {{ $matchPage := hasPrefix $relPermalink $url}}
-                <a class="navbar-item {{ if $matchPage }} navbar-item-active {{ end }}" href="{{ $url }}">{{ .Name
-                    }}</a>
+                <a class="navbar-item {{ if $matchPage }} navbar-item-active {{ end }}" href="{{ $url }}">{{ .Name | upper }}</a>
                 {{ end }}
             </div>
-        </div>
-        <div class="navbar-end">
-            <a class="navbar-item">
-                <i class="fas fa-moon"></i>
-            </a>
-            <a class="navbar-item" href="/index.xml">
-                <i class="fas fa-rss"></i>
-            </a>
+            <div class="navbar-menu-end">
+                <a class="navbar-item">
+                    <i class="fas fa-moon"></i>
+                </a>
+                <a class="navbar-item" href="/index.xml">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
         </div>
     </nav>
 </header>

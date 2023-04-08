@@ -1,0 +1,78 @@
+@import '../vars';
+
+@mixin prism-style {
+  .token {
+    &.cdata,
+    &.comment,
+    &.doctype,
+    &.prolog {
+      color: var(--color-prism-entity);
+    }
+
+    &.punctuation {
+      color: var(--color-prism-gray);
+    }
+
+    &.namespace{
+      opacity: .7;
+    }
+
+    &.boolean,
+    &.constant,
+    &.deleted,
+    &.number,
+    &.property,
+    &.symbol,
+    &.tag {
+      color: var(--color-prism-dpink);
+    }
+
+    &.attr-name,
+    &.builtin,
+    &.char,
+    &.inserted,
+    &.selector,
+    &.string {
+      color: var(--color-prism-green);
+    }
+
+    .language-css &.string,
+    .style &.string,
+    &.entity,
+    &.operator,
+    &.url {
+      color: var(--color-prism-orange);
+      // background: hsla(0, 0%, 100%, .5);
+    }
+
+    &.atrule,
+    &.attr-value,
+    &.keyword {
+      color: var(--color-prism-blue);
+    }
+
+    &.class-name,
+    &.function{
+      color: var(--color-prism-red);
+    }
+
+    &.important,
+    &.regex,
+    &.variable {
+      color: var(--color-prism-yellow);
+    }
+
+    &.bold,
+    &.important {
+      font-weight: bold;
+    }
+
+    &.italic {
+      font-style: italic;
+    }
+
+    &.entity {
+      cursor: help;
+    }
+  }
+}

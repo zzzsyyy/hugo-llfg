@@ -1,0 +1,90 @@
+@mixin colors-common {
+  --color-primary: #7793cc;
+  --color-success: #77ccb0;
+  --color-danger: #d38aa2;
+}
+
+@mixin colors-light {
+  --color-body: #f2f2f2;
+  --color-font: #24292f;
+  --color-font-title: #4d4d4d;
+  --color-font-inverse: #fdfdfd;
+  --color-bg: #ffffff;
+  --color-bg-hover: #f2f2f2;
+  --color-bg-active: #e6e6e6;
+  --color-wrapper: #f1f1f1;
+  --color-border: #dadfe6;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@mixin colors-dark {
+  --color-body: #2f3136;
+  --color-font: #e1e1e1;
+  --color-font-inverse: #24292f;
+  --color-bg: #474b51;
+  --color-bg-hover: #585c61;
+  --color-bg-active: #696c70;
+  --color-wrapper: #34373d;
+  --color-border: #34373d;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@mixin colors-full {
+  :root {
+    @include colors-common;
+    @include colors-light;
+
+    @media (prefers-color-scheme: dark) {
+      @include colors-dark;
+    }
+  }
+
+  body[data-theme='light'] {
+    @include colors-light;
+  }
+
+  body[data-theme='dark'] {
+    @include colors-dark;
+  }
+}
+
+@mixin prism-light {
+  --color-prism-grey: #999;
+  --color-prism-blue: #07a;
+  --color-prism-cyan: #8b81c3;
+  --color-prism-entity: #708090;
+  --color-prism-green: #690;
+  --color-prism-yellow: #e90;
+  --color-prism-orange: #9a6e3a;
+  --color-prism-dpink : #905;
+  --color-prism-pink: #d38aa2;
+  --color-prism-red: #dd4a68;
+}
+
+@mixin prism-dark {
+  --color-prism-grey: #93a1a1;
+  --color-prism-blue: #95abd7;
+  --color-prism-cyan: #bab1df;
+  --color-prism-entity: #657b83;
+  --color-prism-green: #8ec298;
+  --color-prism-yellow: #e3c26a;
+  --color-prism-orange: #ee869a;
+}
+
+@mixin prism-full {
+  :root {
+    @include prism-light;
+
+    @media (prefers-color-scheme: dark) {
+      @include prism-dark;
+    }
+  }
+
+  body[data-theme='light'] {
+    @include prism-light;
+  }
+
+  body[data-theme='dark'] {
+    @include prism-dark;
+  }
+}

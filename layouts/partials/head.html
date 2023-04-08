@@ -13,12 +13,11 @@
     <link rel="stylesheet" href="{{ $defaultStyles.Permalink }}">
 
     {{ $tocJs := resources.Get "js/toc.js" | resources.ExecuteAsTemplate "toc.js" . | minify | fingerprint }}
-    <script src="{{ $tocJs.RelPermalink }}" type="text/javascript"></script>
+    <script defer src="{{ $tocJs.RelPermalink }}" type="text/javascript"></script>
 
     {{ $assets := .Site.Data.assets }}
     <script defer src="{{ printf $assets.prismjs.js.url $assets.prismjs.version }}" crossorigin="anonymous"></script>
     <script defer src="{{ printf $assets.prismjs.autoRender.url $assets.prismjs.version }}" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ printf $assets.prismjs.css.url $assets.prismjs.version }}" crossorigin="anonymous">
     <script defer src="{{ printf $assets.fontawesome.js.url $assets.fontawesome.rev }}"
         crossorigin="anonymous"></script>
     {{ if .Params.math }}

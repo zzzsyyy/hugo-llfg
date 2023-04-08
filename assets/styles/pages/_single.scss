@@ -1,0 +1,37 @@
+.post,.list{
+    // &_bg{
+    //     // padding: {
+    //     //     left: 2.5rem;
+    //     //     right: 2.5rem;
+    //     // }
+    // }
+
+    &_container{
+        display: grid;
+        gap: 1rem;
+        padding-top: 3rem;
+        grid-template-columns: repeat(14, minmax(0, 1fr));
+    }
+
+    &_content{
+        grid-column: 2/11;
+        padding: 2rem 1.5rem;
+        border-radius: $radius-sm;
+        background-color: $color-bg;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    .page-item {
+        display: flex;
+        align-items: center;
+
+        .page-link {
+            margin: 1rem;
+            padding: 1rem;
+        }
+    }
+}

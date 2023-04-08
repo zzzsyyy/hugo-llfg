@@ -1,9 +1,15 @@
 @import "vars";
+@import "global";
 
-@import "html";
-@import "main";
-@import "markdown";
 @import "partials/header";
 @import "partials/footer";
 @import "partials/post";
+@import "partials/toc";
+@import "partials/btop";
+
 @import "pages/404";
+@import "pages/single";
+
+@import "design/reset";
+@import "design/markdown";
+@import "design/prism";

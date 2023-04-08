@@ -1,0 +1,51 @@
+.post-toc {
+  grid-column: 11/14;
+  display: block;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  border-radius: $radius-md;
+  background-color: $color-bg;
+
+  #sticky_toc {
+    // height: 50rem;
+    margin-top: 0;
+    border-block-start-width: .1rem;
+    position: sticky;
+    top: 8rem;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.3, 1);
+    z-index: 0;
+
+    ul,
+    ol {
+      padding-inline-start: 1.5rem;
+
+      li {
+        a {
+          color: $color-text-tertiary;
+          transition-duration: .2s;
+          transition-timing-function: cubic-bezier(.4, 0, .3, 1);
+
+          &:hover {
+            color: $color-primary;
+          }
+          &.active {
+            color: $color-primary;
+            // background-color: $color-bg-hover;
+          }
+        }
+
+        &+li {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+  }
+}

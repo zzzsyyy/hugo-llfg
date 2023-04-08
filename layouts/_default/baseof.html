@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang='{{ .Site.LanguageCode | default "zh" }}'>
-{{- partial "head.html" . -}}
+{{- partial "head" . -}}
 
 <body>
-    {{- partial "header.html" . -}}
+    {{- partial "header" . -}}
     {{- block "main" . }}{{- end }}
-    {{- partial "footer.html" . -}}
+    {{- partial "footer" . -}}
+    {{ if not .IsHome }}
+        {{- partial "btop" . -}}
+    {{ end }}
 </body>
 
 </html>

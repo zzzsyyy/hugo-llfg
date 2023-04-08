@@ -12,3 +12,47 @@
   </div>
 </main>
 {{ end }}
+
+{{/*  {{ define "main" }}
+{{ $paginator := .Paginate .Site.RegularPages }}
+{{ range $paginator.Pages }}
+<div class="post-preview">
+  <a href="{{ .RelPermalink }}">
+      <h2 class="post-title">{{ .Title }}</h2>
+      {{ with .Params.subtitle }}
+      <h3 class="post-subtitle">{{ . }}</h3>
+      {{ end }}
+  </a>
+  <p class="post-meta">
+      {{ partial "author.html" . }}
+  </p>
+</div>
+<hr>
+{{ end }}
+
+{{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
+<ul class="pager">
+  <li class="previous">
+    <a {{ if $paginator.HasPrev }}
+       href="{{ .Paginator.Prev.URL }}"
+       {{ else }}
+       style="visibility: hidden"
+       {{ end }}
+    >&larr; Newer Posts</a>
+  </li>
+
+  <li>
+    <span style="border: none;">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+  </li>
+
+  <li class="next">
+    <a {{ if $paginator.HasNext }}
+       href="{{ .Paginator.Next.URL }}"
+       {{ else }}
+       style="visibility: hidden"
+       {{ end }}
+    >Older Posts &rarr;</a>
+  </li>
+</ul>
+{{ end }}
+{{ end }}  */}}

@@ -1,7 +1,7 @@
 <div class="post_meta">
     <div class="post_meta_item">
         <i class="fas fa-calendar"></i>
-        {{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}
+        <span>{{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}</span>
     </div>
     <div class="post_meta_item">
         <i class="fas fa-book-open"></i>
