@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+{{ $pages := .Site.RegularPages }}
+<main>
+  <div class="">
+    <div class="">
+      {{ range $pages.GroupByDate "2006" }}
+      <section>
+        <span class="listing-seperator">
+          <span class="tag-text">{{ .Key }}</span></span>
+          {{ range .Pages }}
+          <div class="post-preview item" data-tags="{{ with .Params.tags }} {{- delimit  (apply (apply . "lower" ".") "urlquery" ".") "," -}} {{ end }}">
+            <a href="{{ .RelPermalink }}">
+                <h2 class="post-title">{{ .Title }}</h2>
+                <h3 class="post-subtitle">{{ .Params.subtitle }}</h3>
+            </a>
+          <hr>
+          </div>
+          {{ end }}
+      </section>
+      {{ end }}
+    </div>
+  </div>
+</main>
+
+{{ end }}

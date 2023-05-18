@@ -8,9 +8,12 @@
     flex: none;
 
     .navbar {
-        height: 5.25rem;
+        // height: 5.25rem;
         padding: .5rem;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
         position: relative;
 
         &-logo {
@@ -24,7 +27,6 @@
         &-item {
             font-weight: $weight-medium;
             display: inline-block;
-            height: 4.2rem;
             line-height: 4.5rem;
             padding: 0 1rem;
             border-radius: $radius-sm;

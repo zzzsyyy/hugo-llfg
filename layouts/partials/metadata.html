@@ -1,14 +1,14 @@
 <div class="post_meta">
     <div class="post_meta_item">
-        <i class="fas fa-calendar"></i>
+        {{ partial "fontawesome.html" "calendar" }}
         <span>{{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}</span>
     </div>
     <div class="post_meta_item">
-        <i class="fas fa-book-open"></i>
+        {{ partial "fontawesome.html" "book-open" }}
         <span>{{- printf "%d 字" .WordCount -}}</span>
     </div>
     <div class="post_meta_item">
-        <i class="fas fa-clock"></i>
+        {{ partial "fontawesome.html" "clock" }}
         <span>{{- printf "%d 分钟" .ReadingTime -}}</span>
     </div>
 

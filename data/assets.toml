@@ -8,12 +8,6 @@ version = "1.29.0"
   [prismjs.autoRender]
     url = "https://cdn.jsdelivr.net/npm/prismjs@%s/plugins/autoloader/prism-autoloader.min.js"
 
-[fontawesome]
-    rev = "740148ed2e"
-
-    [fontawesome.js]
-      url = "https://kit.fontawesome.com/%s.js"
-
 [katex]
     version = "0.16.4"
 

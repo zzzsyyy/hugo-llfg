@@ -18,8 +18,8 @@
     {{ $assets := .Site.Data.assets }}
     <script defer src="{{ printf $assets.prismjs.js.url $assets.prismjs.version }}" crossorigin="anonymous"></script>
     <script defer src="{{ printf $assets.prismjs.autoRender.url $assets.prismjs.version }}" crossorigin="anonymous"></script>
-    <script defer src="{{ printf $assets.fontawesome.js.url $assets.fontawesome.rev }}"
-        crossorigin="anonymous"></script>
+    {{/*  <script defer src="{{ printf $assets.fontawesome.js.url $assets.fontawesome.rev }}"
+        crossorigin="anonymous"></script>  */}}
     {{ if .Params.math }}
     <link rel="stylesheet" href="{{ printf $assets.katex.css.url $assets.katex.version }}" crossorigin="anonymous">
     <script defer src="{{ printf $assets.katex.js.url $assets.katex.version }}" crossorigin="anonymous"></script>
