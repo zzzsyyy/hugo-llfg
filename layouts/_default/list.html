@@ -11,7 +11,7 @@
                 <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
               </div>
               <div class="list_item_summary">
-                {{ .Summary | plainify }}
+                {{ .Summary | safeHTML }}
               </div>
               {{ partial "metadata" . }}
             </div>

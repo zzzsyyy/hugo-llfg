@@ -12,28 +12,13 @@
         <span>{{- printf "%d 分钟" .ReadingTime -}}</span>
     </div>
 
-    {{ with .GetTerms "categories" }}
+    {{- if .Params.series -}}
+    {{- with index (.GetTerms "series") 0 -}}
     <div class="post_meta_item">
-        <i class="fas fa-folder"></i>
-        {{ range $index, $value := . }}
-        {{ if gt $index 0 }}
-        <span>, </span>
-        {{ end -}}
-        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-        {{ end }}
+        {{ partial "fontawesome.html" "list" }}
+        <span> <a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
     </div>
-    {{ end }}
-
-    {{ with .GetTerms "series" }}
-    <div class="post_meta_item">
-        <i class="fas fa-th-list"></i>
-        {{ range $index, $value := . }}
-        {{ if gt $index 0 }}
-        <span>, </span>
-        {{ end -}}
-        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-        {{ end }}
-    </div>
-    {{ end }}
+    {{- end -}}
+    {{- end -}}
 
 </div>

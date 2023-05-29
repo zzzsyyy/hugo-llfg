@@ -7,7 +7,9 @@
         {{ with .TableOfContents }}
         {{ replace . "id=\"TableOfContents\"" "id='TableOfContents' class='nav nav-stacked'" | safeHTML }}
         {{ end }}
+        {{- partial "series" . -}}
     </div>
+    
 </aside>
 <script>
     window.addEventListener("DOMContentLoaded", () => {

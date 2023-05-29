@@ -1,1 +1,21 @@
-<a href="{{ .Destination | relURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- $linkurl := .Destination }}
+{{- $relval := ""}}
+{{- $targetval := ""}}
+{{- $classval := "" }}
+{{- if strings.HasPrefix $linkurl "http" }}
+    {{- $targetval = printf "%s %s"  $targetval "_blank" }}
+    {{- $relval = printf "%s %s" $relval "noopener" }}
+    {{- $classval = printf "%s %s" $classval "external" }}
+{{- end -}}
+{{/*  TODO  */}}
+{{- if strings.HasSuffix $linkurl "#?" }} 
+    {{- $relval = printf "%s %s" $relval "nofollow" }}
+    {{- $urlparts := split $linkurl "#" -}}
+    {{- $linkurl = index $urlparts 0}}
+{{- end -}}
+<a href="{{ $linkurl | safeURL }}"
+    {{- with .Title}} title="{{ trim . " " }}"{{ end -}}
+    {{- with $relval}} rel="{{ trim . " " }}"{{ end -}}
+    {{- with $targetval}} target="{{ trim . " " }}"{{ end -}}
+    {{- with $classval}} class="{{ trim . " " }}"{{ end -}}
+>{{ .Text | safeHTML }}</a>
