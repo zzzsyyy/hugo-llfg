@@ -39,7 +39,7 @@ $size in $md-title-font-size {
         font-size: $size;
         font-weight: 600;
         color: var(--font-color-title);
-        line-height: 1;
+        line-height: $line-height-md;
     }
 }
 

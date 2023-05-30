@@ -37,7 +37,7 @@
     {{ end }}
     {{ if hugo.IsProduction }}
     {{ with .Site.Params.umami }}
-      <link rel="preconnect" href="//{{ index .url 2 }}">
+      {{/*  <link rel="preconnect" href="//{{ index .url 2 }}">  */}}
     <script async defer data-website-id="{{ .websiteId }}" src="{{ .url }}"></script>
   {{ end }}
   {{ end }}

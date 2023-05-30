@@ -1,0 +1,61 @@
+main#archive {
+    background: #fff;
+
+    .archive {
+        text-align: left;
+        padding: 2rem;
+        margin: 0 auto;
+        max-width: 800px;
+
+        h1 {
+            font-size: 3.625rem;
+        }
+
+        &_group {
+
+            &-year:not(:last-of-type) {
+                border-bottom: 1px solid #dcdcdc;
+            }
+
+            &-year {
+                margin-top: 5rem;
+
+                &-header {
+                    margin: 2rem 0;
+                }
+            }
+
+            &-month:not(:last-of-type) {
+                border-bottom: 1px solid #dcdcdc;
+            }
+
+            &-month {
+                display: flex;
+                align-items: flex-start;
+                padding: 10px 0;
+
+                &-header {
+                    margin: 2rem 0;
+                    width: 200px;
+                    opacity: .5;
+                }
+            }
+
+            &-posts {
+                width: 100%;
+            }
+        }
+        &_post:not(:last-of-type){
+            border-bottom: 1px solid #dcdcdc;
+        }
+        &_post {
+            padding: 1.2rem 0;
+            &-title {
+                margin: .8rem 0;
+                a{
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
