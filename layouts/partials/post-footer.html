@@ -1,0 +1,16 @@
+{{ if or .PrevInSection .NextInSection }}
+<div class="post-footer">
+    <div>
+        {{ with .NextInSection }}
+        <span class="post-footer-d">Previous</span>
+        <a href="{{ .Permalink }}" class="block">{{ .LinkTitle }}</a>
+        {{ end }}
+    </div>
+    <div class="post-footer-r">
+        {{ with .PrevInSection }}
+        <span class="post-footer-d">Next</span>
+        <a href="{{ .Permalink }}" class="block">{{ .LinkTitle }}</a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

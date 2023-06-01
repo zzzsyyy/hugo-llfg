@@ -9,7 +9,7 @@ version = "1.29.0"
     url = "https://cdn.jsdelivr.net/npm/prismjs@%s/plugins/autoloader/prism-autoloader.min.js"
 
 [katex]
-    version = "0.16.4"
+    version = "0.16.7"
 
     [katex.css]
       url = "https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css"

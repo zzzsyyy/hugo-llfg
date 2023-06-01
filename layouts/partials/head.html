@@ -12,8 +12,8 @@
     {{ $defaultStyles := resources.Get "styles/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha384"}}
     <link rel="stylesheet" href="{{ $defaultStyles.Permalink }}">
 
-    {{ $tocJs := resources.Get "js/toc.js" | resources.ExecuteAsTemplate "toc.js" . | minify | fingerprint }}
-    <script defer src="{{ $tocJs.RelPermalink }}" type="text/javascript"></script>
+    {{ $llfgJs := resources.Get "js/llfg.js" | resources.ExecuteAsTemplate "llfg.js" . | minify | fingerprint }}
+    <script defer src="{{ $llfgJs.RelPermalink }}" type="text/javascript"></script>
 
     {{ $assets := .Site.Data.assets }}
     <script defer src="{{ printf $assets.prismjs.js.url $assets.prismjs.version }}" crossorigin="anonymous"></script>
@@ -23,17 +23,6 @@
     <script defer src="{{ printf $assets.katex.js.url $assets.katex.version }}" crossorigin="anonymous"></script>
     <script defer src="{{ printf $assets.katex.autoRender.url $assets.katex.version }}" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderMathInElement(document.body, {
-                delimiters: [
-                    { left: "$$", right: "$$", display: true },
-                    { left: "$", right: "$", display: false }
-                ],
-                ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'option'],
-            });
-        });
-    </script>
     {{ end }}
     {{ if hugo.IsProduction }}
     {{ with .Site.Params.umami }}

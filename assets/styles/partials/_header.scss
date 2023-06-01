@@ -8,8 +8,9 @@
     flex: none;
 
     .navbar {
-        // height: 5.25rem;
-        padding: .5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        // padding: .5rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -17,18 +18,36 @@
         position: relative;
 
         &-logo {
-            margin-left: 4rem;
+            @include responsive('md') {
+                margin-left: 4rem;
+            }
 
             h1 {
                 font-size: 2rem;
             }
         }
 
+        @include responsive('md') {
+            &-btn {
+                display: none;
+            }
+        }
+
+        &-btn {
+            padding: .5rem;
+        }
+
         &-item {
+            @include responsive('md') {
+                line-height: 4.5rem;
+                display: inline-block;
+                padding: 0 1rem;
+                margin-top: 0;
+            }
+
             font-weight: $weight-medium;
-            display: inline-block;
-            line-height: 4.5rem;
-            padding: 0 1rem;
+            margin-top: 1rem;
+            display: block;
             border-radius: $radius-sm;
             cursor: pointer;
             color: inherit;
@@ -47,19 +66,59 @@
         }
 
         &-menu {
-            flex: auto;
-            display: flex;
-            justify-content: space-between;
+            @include responsive('md') {
+                width: auto;
+                flex-grow: 1;
+                justify-content: space-between;
+                align-items: center;
+                display: flex !important;
+            }
+
+            z-index: 2;
+            width: 100%;
+            display: block;
 
             &-start {
-                margin-left: 4rem;
+                @include responsive('md') {
+                    padding-bottom: 0;
+                    flex-grow: 1;
+                    display: flex;
+                    border-bottom-width: 0;
+                    margin-left: 4rem;
+                }
+
+                padding-bottom: 1rem;
+                border-bottom-width: 1px;
             }
 
             &-end {
-                margin-right: 4rem;
+                @include responsive('md') {
+                    margin-right: 2rem;
+                    margin-left: 2rem;
+                }
+
+                .navbar-item {
+                    margin-right: 2rem;
+                }
+
+                display: flex;
+                margin-top: .5rem;
+                margin-bottom: .5rem;
             }
         }
     }
+}
+
+.is-mobile {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
 }
 
 .navbar-logo>.navbar-item {
@@ -67,18 +126,5 @@
 
     &:hover {
         color: inherit;
-    }
-}
-
-@mixin indice{
-    &::after {
-        content: '';
-        position: absolute;
-        // top: 0;
-        width: 55%;
-        left: 50%;
-        transform: translate(-50%);
-        height: .2rem;
-        background-color: $color-primary;
     }
 }

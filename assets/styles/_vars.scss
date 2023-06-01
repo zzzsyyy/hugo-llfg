@@ -51,7 +51,7 @@ $family-mono: 'Fira Code', $family-cjk, monospace;
         @content;
       }
     } @else if $breakpoint == 'md' {
-      @media (max-width: 768px) {
+      @media (min-width: 768px) {
         @content;
       }
     } @else if $breakpoint == 'lg' {

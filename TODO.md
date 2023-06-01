@@ -1,22 +1,23 @@
 # TODO
 
-- [ ] Resposablilité
+- [x] Resposablilité
 - [ ] Dark Mode
 - [ ] Comment
 - [ ] Search
 - [x] Optimize scrolling events
 - [ ] Some Style de Polices
 - [x] Change into *yaml* FM
-- [ ] Add Tags under meta
+- [x] Add Tags under main
 - [x] Add Series in meta
+- [ ] i18n
 
 
 ## Pages
 
 | Page    | SCSS       | HTML |
 | ------- | ---------- | ---- |
-| Achieve | 🔜          | ✅    |
-| Single  | ✅  (sans📱) | ✅    |
+| Achieve | ✅          | ✅    |
+| Single  | ✅          | ✅    |
 | List    | 🚧          | 🚧    |
 | About   | 🔜          | 🚧    |
 
@@ -25,8 +26,9 @@
 | Part    | SCSS        | HTML             |
 | ------- | ----------- | ---------------- |
 | Footer  | ✅           | ✅                |
-| Header  | 🚧  (sans 📱) | ✅                |
-| Sidebar | 🚧           | ✅ (nojs partout) |
+| Header  | ✅           | ✅                |
+| Sidebar | 🚧           | ✅                |
+| Comment | 🔜           | 🔜                |
 
 ## Others
 

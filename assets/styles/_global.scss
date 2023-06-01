@@ -31,6 +31,7 @@ a {
     text-decoration: none;
     background-color: transparent;
     cursor: pointer;
+    color: $font-color-link;
 }
 
 @each $header,
@@ -63,9 +64,16 @@ ul {
     padding: 0;
 }
 
-button,
-[role="button"] {
-    cursor: pointer;
+button{
+    background-color: transparent;
+    background-image: none;
+    &,[type="button"]{
+        appearance: button;
+        -webkit-appearance: button;
+    }
+    &,[role="button"] {
+        cursor: pointer;
+    }
 }
 
 p,
@@ -94,6 +102,10 @@ hr {
       content: "#";
     }
   } */
+
+.hidden{
+    display: none !important;
+}
 
 .inline-svg {
     display: inline-block;

@@ -8,7 +8,10 @@
             </a>
             {{ end }}
         </div>
-        <div class="navbar-menu">
+        <button id="navbar-btn" class="navbar-btn">
+            {{ partial "fontawesome.html" "bars" }}
+        </button>
+        <div id="menu" class="navbar-menu hidden">
             <div class="navbar-menu-start">
                 {{ $relPermalink := .RelPermalink }}
                 {{ range .Site.Menus.main }}
@@ -22,9 +25,10 @@
                     {{ partial "fontawesome.html" "moon" }}
                 </a>
                 <a class="navbar-item" title="订阅 XML" href="/index.xml">
-                    <i class="fas fa-rss"></i>
+                    {{ partial "fontawesome.html" "rss" }}
                 </a>
             </div>
         </div>
+        <div id="is-mobile" class="is-mobile hidden"></div>
     </nav>
 </header>

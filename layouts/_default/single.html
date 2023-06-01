@@ -12,6 +12,11 @@
                 <article class="markdown">
                     {{ .Content }}
                 </article>
+                {{ with .GetTerms "tags" }}
+                {{ partial "tags" . }}
+                {{ end }}
+                {{ partial "post-footer" . }}
+                {{/*  {{ partial "comment.html" . }}  */}}
             </div>
             {{- partial "toc" . -}}
         </div>

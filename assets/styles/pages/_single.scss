@@ -1,10 +1,4 @@
 .post,.list{
-    // &_bg{
-    //     // padding: {
-    //     //     left: 2.5rem;
-    //     //     right: 2.5rem;
-    //     // }
-    // }
 
     &_container{
         display: grid;
@@ -14,7 +8,10 @@
     }
 
     &_content{
-        grid-column: 2/11;
+        @include responsive('md'){
+            grid-column: 2/11;
+        }
+        grid-column: 1/15;
         padding: 2rem 1.5rem;
         border-radius: $radius-sm;
         background-color: $color-bg;
@@ -32,6 +29,32 @@
         .page-link {
             margin: 1rem;
             padding: 1rem;
+        }
+    }
+}
+
+.post-footer {
+    padding-top: 1rem;
+    display: flex;
+    border-top-width: 1px;
+    flex-direction: column;
+
+    &-d {
+        display: block;
+        font-weight: bold;
+    }
+
+    &-r {
+        margin-top: 1rem;
+    }
+
+    @include responsive(md) {
+        justify-content: space-between;
+        flex-direction: row;
+
+        &-r {
+            text-align: right;
+            margin-top: 0;
         }
     }
 }

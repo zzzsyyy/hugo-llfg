@@ -1,6 +1,9 @@
 .post-toc {
-  grid-column: 11/14;
-  display: block;
+  @include responsive('md'){
+    grid-column: 11/14;
+    display: block;
+  }
+  display: none;
   padding: 2rem 1.5rem 2rem 1.5rem;
   border-radius: $radius-md;
   background-color: $color-bg;
