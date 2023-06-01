@@ -1,0 +1,7 @@
+{{ if and .Params.math .IsPage }}
+{{ $assets := .Site.Data.assets }}
+<link rel="stylesheet" href="{{ printf $assets.katex.css.url $assets.katex.version }}" crossorigin="anonymous">
+<script defer src="{{ printf $assets.katex.js.url $assets.katex.version }}" crossorigin="anonymous"></script>
+<script defer src="{{ printf $assets.katex.autoRender.url $assets.katex.version }}" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector('.markdown'));"></script>
+{{ end }}
