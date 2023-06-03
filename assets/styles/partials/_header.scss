@@ -1,6 +1,6 @@
 .header {
     position: sticky;
-    background-color: $color-bg;
+    background-color: var(--color-body);
     box-shadow: $box-shadow;
     top: 0;
     z-index: 5;
@@ -52,16 +52,15 @@
             cursor: pointer;
             color: inherit;
             position: relative;
-            transition: background-color 100ms ease;
             background-color: transparent;
 
             &:hover {
-                color: $color-primary;
+                color: var(--color-primary);
                 text-decoration: none;
             }
 
             &-active {
-                color: $color-primary;
+                color: var(--color-primary);
             }
         }
 
@@ -73,7 +72,7 @@
                 align-items: center;
                 display: flex !important;
             }
-
+            color: var(--color-font-title);
             z-index: 2;
             width: 100%;
             display: block;

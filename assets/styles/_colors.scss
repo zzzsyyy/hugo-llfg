@@ -1,30 +1,32 @@
-@mixin colors-common {
-  --color-primary: #7793cc;
-  --color-success: #77ccb0;
-  --color-danger: #d38aa2;
+@mixin colors-common{
+  --color-primary: #8aa2d3;
 }
 
 @mixin colors-light {
-  --color-body: #f2f2f2;
-  --color-font: #24292f;
-  --color-font-title: #4d4d4d;
-  --color-font-inverse: #fdfdfd;
-  --color-bg: #ffffff;
-  --color-bg-hover: #f2f2f2;
-  --color-bg-active: #e6e6e6;
-  --color-wrapper: #f1f1f1;
+  // $color-bd: mix(#2e5da8, #fff, 5%);
+  --color-bg: #f5f7fb;
+  --color-bg-aux: #e6e8ee;
+  // --color-body: #fdfdff;
+  --color-body: #f5f7fb;
+  --color-body-aux: #fafafa;
+  --color-font: #1a1b1f;
+  --color-font-aux: rgba(0,0,0,0.55);
+  --color-font-hover: #8aa2d3;
+  --color-font-title: #44474e;
   --color-border: #dadfe6;
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 @mixin colors-dark {
-  --color-body: #2f3136;
-  --color-font: #e1e1e1;
-  --color-font-inverse: #24292f;
-  --color-bg: #474b51;
-  --color-bg-hover: #585c61;
-  --color-bg-active: #696c70;
-  --color-wrapper: #34373d;
+  // --color-bg: #1a1b1f;
+  --color-bg: #22242a;
+  --color-bg-aux: #32343a;
+  --color-body: #22242a;
+  --color-body-aux: #282a36;
+  --color-font: hsla(0,0%,100%,.87);
+  --color-font-aux: hsla(0,0%,100%,.6);
+  --color-font-hover: #8aa2d3;
+  --color-font-title: #f7f7f7;
   --color-border: #34373d;
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

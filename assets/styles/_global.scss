@@ -1,3 +1,6 @@
+@import "colors";
+@include colors-full;
+
 * {
     border-color: #e2e8f0;
     transition: background-color .1s ease-in-out;
@@ -6,7 +9,7 @@
 %html_body {
     font-size: $font-md;
     font-family: $family-body;
-    background-color: var(--color-body);
+    background-color: var(--color-bg);
     color: var(--color-font);
 }
 
@@ -31,7 +34,7 @@ a {
     text-decoration: none;
     background-color: transparent;
     cursor: pointer;
-    color: $font-color-link;
+    color: var(--color-primary);
 }
 
 @each $header,
@@ -39,16 +42,16 @@ $size in $md-title-font-size {
     #{$header} {
         font-size: $size;
         font-weight: 600;
-        color: var(--font-color-title);
+        color: var(--color-font-title);
         line-height: $line-height-md;
     }
 }
 
 
-body {
-    background-color: $color-body;
-    color: $font-color-text;
-}
+// body {
+//     background-color: $color-body;
+//     color: $font-color-text;
+// }
 
 abbr[title] {
     border-bottom: none;

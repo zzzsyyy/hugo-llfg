@@ -2,7 +2,7 @@
     grid-column: 2/14;
     padding: 2rem 1.5rem 2rem 1.5rem;
     border-radius: 0.6rem;
-    background-color: $color-bg;
+    background-color: var(--color-body);
 }
 
 // .with_toc {
@@ -16,7 +16,7 @@
 .post_meta {
     margin-top: 0.5rem;
     display: flex;
-    color: $color-text-tertiary;
+    color: var(--color-font-aux);
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
@@ -59,7 +59,7 @@
     }
 
     &_summary {
-        color: $color-text-tertiary;
+        color: var(--color-font-aux);
         overflow-wrap: break-word;
     }
 }

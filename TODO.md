@@ -1,7 +1,7 @@
 # TODO
 
 - [x] Resposablilité
-- [ ] Dark Mode
+- [ ] Dark Mode (WIP)
 - [ ] Comment
 - [ ] Search
 - [x] Optimize scrolling events
@@ -27,7 +27,7 @@
 | ------- | ----------- | ---------------- |
 | Footer  | ✅           | ✅                |
 | Header  | ✅           | ✅                |
-| Sidebar | 🚧           | ✅                |
+| Sidebar | ✅           | ✅                |
 | Comment | 🔜           | 🔜                |
 
 ## Others

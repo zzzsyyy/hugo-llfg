@@ -6,7 +6,7 @@
   display: none;
   padding: 2rem 1.5rem 2rem 1.5rem;
   border-radius: $radius-md;
-  background-color: $color-bg;
+  background-color: var(--color-body);
 
   #sticky_toc {
     // height: 50rem;
@@ -24,16 +24,15 @@
 
       li {
         a {
-          color: $color-text-tertiary;
+          color: var(--color-font-aux);
           transition-duration: .2s;
           transition-timing-function: cubic-bezier(.4, 0, .3, 1);
 
           &:hover {
-            color: $color-primary;
+            color: var(--color-font-hover);
           }
           &.active {
-            color: $color-primary;
-            // background-color: $color-bg-hover;
+            color: var(--color-font-hover);
           }
         }
 

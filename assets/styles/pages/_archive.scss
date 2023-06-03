@@ -1,5 +1,5 @@
 main#archive {
-    background: #fff;
+    background: var(--color-body);
 
     .archive {
         text-align: left;
@@ -14,7 +14,7 @@ main#archive {
         &_group {
 
             &-year:not(:last-of-type) {
-                border-bottom: 1px solid #dcdcdc;
+                border-bottom: 1px solid var(--color-font-aux);
             }
 
             &-year {
@@ -26,7 +26,7 @@ main#archive {
             }
 
             &-month:not(:last-of-type) {
-                border-bottom: 1px solid #dcdcdc;
+                border-bottom: 1px solid var(--color-font-aux);
             }
 
             &-month {
@@ -49,7 +49,7 @@ main#archive {
             }
         }
         &_post:not(:last-of-type){
-            border-bottom: 1px solid #dcdcdc;
+            border-bottom: 1px solid var(--color-font-aux);
         }
         &_post {
             padding: 1.2rem 0;

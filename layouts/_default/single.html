@@ -1,25 +1,23 @@
 {{ define "main" }}
 <main>
-    <div class="post_bg">
-        <div class="post_container">
-            <div class="post_content">
-                <header>
-                    <div class="post_title">
-                        <h1>{{ .Title }}</h1>
-                    </div>
-                    {{- partial "metadata" . -}}
-                </header>
-                <article class="markdown">
-                    {{ .Content }}
-                </article>
-                {{ with .GetTerms "tags" }}
-                {{ partial "tags" . }}
-                {{ end }}
-                {{ partial "post-footer" . }}
-                {{/*  {{ partial "comment.html" . }}  */}}
-            </div>
-            {{- partial "toc" . -}}
+    <div class="post_container">
+        <div class="post_content">
+            <header>
+                <div class="post_title">
+                    <h1>{{ .Title }}</h1>
+                </div>
+                {{- partial "metadata" . -}}
+            </header>
+            <article class="markdown">
+                {{ .Content }}
+            </article>
+            {{ with .GetTerms "tags" }}
+            {{ partial "tags" . }}
+            {{ end }}
+            {{ partial "post-footer" . }}
+            {{/* {{ partial "comment.html" . }} */}}
         </div>
+        {{- partial "toc" . -}}
     </div>
 </main>
 {{ end }}

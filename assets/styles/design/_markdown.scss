@@ -15,7 +15,7 @@
     }
 
     pre {
-        background-color: $bg-color-code !important;
+        background-color: var(--color-body-aux);
         border-radius: $radius-sm;
         padding: 0 !important;
         position: relative;
@@ -27,7 +27,7 @@
             right: 1rem;
             font-size: $font-lg;
             font-weight: 700;
-            color: $font-color-mark;
+            color: var(--color-font);
             opacity: .25;
         }
 
@@ -47,13 +47,13 @@
         font-size: 90%;
         color: inherit;
         display: inline;
-        background-color: #f1f1f1;
+        background-color: var(--color-bg-aux);
         border-radius: $radius-sm;
         padding: 0.125rem 0.35rem 0.1rem;
     }
 
     strong {
-        color: $color-text-sec;
+        color: var(--color-font-title);
     }
 
     blockquote {
@@ -62,8 +62,8 @@
         border-left-width: 3px;
         border-color: #e3e6eb;
         padding: 0.75rem 1rem;
-        color: $color-text-tertiary;
-        background-color: #f4f5f7;
+        color: var(--color-font-aux);
+        background-color: var(--color-bg-active);
         margin: 1.5rem 0 1.5rem 1rem;
     }
 
@@ -98,7 +98,7 @@
         }
 
         &>li::marker {
-            color: $color-text-tertiary;
+            color: var(--color-font-aux);
             font-weight: 400;
         }
     }

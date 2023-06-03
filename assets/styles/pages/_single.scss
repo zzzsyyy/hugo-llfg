@@ -1,5 +1,4 @@
 .post,.list{
-
     &_container{
         display: grid;
         gap: 1rem;
@@ -14,7 +13,7 @@
         grid-column: 1/15;
         padding: 2rem 1.5rem;
         border-radius: $radius-sm;
-        background-color: $color-bg;
+        background: var(--color-body);
     }
 }
 

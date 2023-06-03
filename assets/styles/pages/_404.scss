@@ -12,7 +12,7 @@
             padding: 10rem 2rem 10rem 2rem;
             overflow: hidden;
             border-radius: $radius-sm;
-            background-color: $color-bg;
+            background-color: var(--color-body);
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -28,7 +28,7 @@
             font-size: 1.75rem;
             margin-top: 1rem;
             margin-bottom: 0;
-            color: $color-primary;
+            color: var(--color-primary);
         }
     }
 }
