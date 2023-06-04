@@ -4,4 +4,5 @@
 <script defer src="{{ printf $assets.katex.js.url $assets.katex.version }}" crossorigin="anonymous"></script>
 <script defer src="{{ printf $assets.katex.autoRender.url $assets.katex.version }}" crossorigin="anonymous"
     onload="renderMathInElement(document.querySelector('.markdown'));"></script>
+<script>document.addEventListener('DOMContentLoaded', () => { inlineMath() });</script>
 {{ end }}

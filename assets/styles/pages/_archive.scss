@@ -14,7 +14,7 @@ main#archive {
         &_group {
 
             &-year:not(:last-of-type) {
-                border-bottom: 1px solid var(--color-font-aux);
+                border-bottom: $split-line;
             }
 
             &-year {
@@ -26,7 +26,7 @@ main#archive {
             }
 
             &-month:not(:last-of-type) {
-                border-bottom: 1px solid var(--color-font-aux);
+                border-bottom: $split-line;
             }
 
             &-month {
@@ -49,7 +49,7 @@ main#archive {
             }
         }
         &_post:not(:last-of-type){
-            border-bottom: 1px solid var(--color-font-aux);
+            border-bottom: $split-line;
         }
         &_post {
             padding: 1.2rem 0;

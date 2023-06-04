@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
     link.addEventListener('click', function (event) {
       event.preventDefault();
 
-      const targetId = link.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
+      const targetId = link.getAttribute('href').replace('#', '');
+      const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        const headerHeight = document.querySelector('header').offsetHeight; // 根据实际情况获取页眉高度
+        const headerHeight = document.getElementById('header').offsetHeight; // 根据实际情况获取页眉高度
         const targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
         window.scrollTo({ top: targetOffset, behavior: 'smooth' });
@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   switchBurger();
-  inlineMath();
 });
 setTimeout(() => {
   history.replaceState('', document.title, window.location.origin + window.location.pathname + window.location.search)

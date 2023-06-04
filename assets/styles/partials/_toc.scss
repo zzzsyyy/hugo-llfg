@@ -9,7 +9,6 @@
   background-color: var(--color-body);
 
   #sticky_toc {
-    // height: 50rem;
     margin-top: 0;
     border-block-start-width: .1rem;
     position: sticky;
@@ -17,6 +16,9 @@
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.3, 1);
     z-index: 0;
+    // overflow-y: auto;
+    // max-height: calc(100vh - 8rem);
+    // scrollbar-width: none;
 
     ul,
     ol {

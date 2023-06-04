@@ -1,22 +1,22 @@
 <div class="post_meta">
     <div class="post_meta_item">
         {{ partial "fontawesome.html" "calendar" }}
-        <span>{{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}</span>
+        <span class="apres-svg">{{- printf "<time>%s</time>" (.Date.Format "2006-01-02") | safeHTML -}}</span>
     </div>
     <div class="post_meta_item">
         {{ partial "fontawesome.html" "book-open" }}
-        <span>{{- printf "%d 字" .WordCount -}}</span>
+        <span class="apres-svg">{{- printf "%d 字" .WordCount -}}</span>
     </div>
     <div class="post_meta_item">
         {{ partial "fontawesome.html" "clock" }}
-        <span>{{- printf "%d 分钟" .ReadingTime -}}</span>
+        <span class="apres-svg">{{- printf "%d 分钟" .ReadingTime -}}</span>
     </div>
 
     {{- if .Params.series -}}
     {{- with index (.GetTerms "series") 0 -}}
     <div class="post_meta_item">
         {{ partial "fontawesome.html" "list" }}
-        <span> <a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
+        <span class="apres-svg"> <a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
     </div>
     {{- end -}}
     {{- end -}}

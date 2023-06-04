@@ -4,9 +4,7 @@
         <h3>目录</h3>
     </header>
     <div id="sticky_toc">
-        {{ with .TableOfContents }}
-        {{ replace . "id=\"TableOfContents\"" "id='TableOfContents' class='nav nav-stacked'" | safeHTML }}
-        {{ end }}
+        {{ .TableOfContents }}
         {{- partial "series" . -}}
     </div>
     
