@@ -22,8 +22,6 @@
     {{ with .Site.Params.umami }}
       {{/*  <link rel="preconnect" href="//{{ index .url 2 }}">  */}}
     <script async defer data-website-id="{{ .websiteId }}" src="{{ .url }}"></script>
-    <script>(function () {window.counterscale = { q: [["set", "siteId", "blogzzzsytop"], ["trackPageview"]],};})();</script>
-  <script id="counterscale-script" src="https://counter.zzzsy.top/tracker.js" defer></script>
   {{ end }}
   {{ end }}
 </head>
