@@ -1,3 +1,5 @@
+@use "../vars.scss";
+
 //sanitize.css
 
 *,
@@ -201,13 +203,12 @@
     position: absolute;
 }
 
-@import "../vars.scss";
 
 pre,
 code {
     font: {
-        family: $family-mono;
-        size: $font-md;
+        family: vars.$family-mono;
+        size: vars.$font-md;
     }
 
     color: inherit;
@@ -217,7 +218,7 @@ code {
 
 b,
 strong {
-    font-weight: $weight-bold;
+    font-weight: vars.$weight-bold;
 }
 
 

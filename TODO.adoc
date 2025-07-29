@@ -2,7 +2,7 @@
 
 [%interactive]
 - [x] Resposablilité
-- [ ] Dark Mode (WIP)
+- [x] Dark Mode
 - [ ] Comment
 - [ ] Search
 - [x] Optimize scrolling events

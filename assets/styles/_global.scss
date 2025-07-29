@@ -1,5 +1,7 @@
-@import "colors";
-@include colors-full;
+@use "colors";
+@use "vars";
+
+@include colors.colors-full;
 
 * {
     border-color: #e2e8f0;
@@ -7,8 +9,8 @@
 }
 
 %html_body {
-    font-size: $font-md;
-    font-family: $family-body;
+    font-size: vars.$font-md;
+    font-family: vars.$family-body;
     background-color: var(--color-bg);
     color: var(--color-font);
 }
@@ -28,6 +30,26 @@ body {
     flex-direction: column;
     position: relative;
     overflow-x: hidden;
+
+    &[data-user-color-scheme="dark"] .theme-toggle {
+        .dark-icon {
+            opacity: 0;
+        }
+        .light-icon {
+            opacity: 1;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        &:not([data-user-color-scheme]) .theme-toggle {
+            .dark-icon {
+                opacity: 0;
+            }
+            .light-icon {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 a {
@@ -38,12 +60,12 @@ a {
 }
 
 @each $header,
-$size in $md-title-font-size {
+$size in vars.$md-title-font-size {
     #{$header} {
         font-size: $size;
         font-weight: 600;
         color: var(--color-font-title);
-        line-height: $line-height-md;
+        line-height: vars.$line-height-md;
     }
 }
 

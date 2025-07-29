@@ -9,8 +9,25 @@
     <meta name="robots" content="noodp">
 
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
-    {{ $defaultStyles := resources.Get "styles/style.scss" | resources.ToCSS | minify | resources.Fingerprint "sha384"}}
-    <link rel="stylesheet" href="{{ $defaultStyles.Permalink }}">
+    {{ with resources.Get "styles/style.scss" }}
+    {{ $opts := dict
+      "enableSourceMap" hugo.IsDevelopment
+      "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+      "targetPath" "css/main.css"
+      "transpiler" "dartsass"
+      "vars" site.Params.styles
+      "includePaths" (slice "node_modules/bootstrap/scss")
+    }}
+    {{ with . | toCSS $opts }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ else }}
+        {{ with . | fingerprint }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 
     {{ $llfgJs := resources.Get "js/llfg.js" | resources.ExecuteAsTemplate "llfg.js" . | minify | fingerprint }}
     <script defer src="{{ $llfgJs.RelPermalink }}" type="text/javascript"></script>

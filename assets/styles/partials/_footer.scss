@@ -1,5 +1,7 @@
+@use "../vars";
+
 .footer {
-    font-size: $font-xs;
+    font-size: vars.$font-xs;
 
     &-wrap {
         padding: 1.5rem;

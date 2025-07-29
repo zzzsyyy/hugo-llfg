@@ -1,4 +1,7 @@
-@import '../vars';
+@use '../vars';
+// @import '../colors';
+
+// @include prism-full;
 
 @mixin prism-style {
   .token {

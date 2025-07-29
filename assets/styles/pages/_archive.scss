@@ -1,3 +1,5 @@
+@use "../vars";
+
 main#archive {
     background: var(--color-body);
 
@@ -14,7 +16,7 @@ main#archive {
         &_group {
 
             &-year:not(:last-of-type) {
-                border-bottom: $split-line;
+                border-bottom: vars.$split-line;
             }
 
             &-year {
@@ -26,7 +28,7 @@ main#archive {
             }
 
             &-month:not(:last-of-type) {
-                border-bottom: $split-line;
+                border-bottom: vars.$split-line;
             }
 
             &-month {
@@ -35,7 +37,7 @@ main#archive {
                 padding: 10px 0;
 
                 &-header {
-                    @include responsive('md'){
+                    @include vars.responsive('md'){
                         width: 24rem;
                     }
                     margin: 2rem 0;
@@ -49,7 +51,7 @@ main#archive {
             }
         }
         &_post:not(:last-of-type){
-            border-bottom: $split-line;
+            border-bottom: vars.$split-line;
         }
         &_post {
             padding: 1.2rem 0;

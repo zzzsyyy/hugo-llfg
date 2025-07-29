@@ -1,7 +1,9 @@
+@use "../vars";
+
 .header {
     position: sticky;
     background-color: var(--color-body);
-    box-shadow: $box-shadow;
+    box-shadow: vars.$box-shadow;
     top: 0;
     z-index: 5;
     user-select: none;
@@ -18,7 +20,7 @@
         position: relative;
 
         &-logo {
-            @include responsive('md') {
+            @include vars.responsive('md') {
                 margin-left: 4rem;
             }
 
@@ -27,7 +29,7 @@
             }
         }
 
-        @include responsive('md') {
+        @include vars.responsive('md') {
             &-btn {
                 display: none;
             }
@@ -38,17 +40,17 @@
         }
 
         &-item {
-            @include responsive('md') {
+            @include vars.responsive('md') {
                 line-height: 4.5rem;
                 display: inline-block;
                 padding: 0 1rem;
                 margin-top: 0;
             }
 
-            font-weight: $weight-medium;
+            font-weight: vars.$weight-medium;
             margin-top: 1rem;
             display: block;
-            border-radius: $radius-sm;
+            border-radius: vars.$radius-sm;
             cursor: pointer;
             color: inherit;
             position: relative;
@@ -65,33 +67,34 @@
         }
 
         &-menu {
-            @include responsive('md') {
+            color: var(--color-font-title);
+            z-index: 2;
+            width: 100%;
+            display: block;
+
+            @include vars.responsive('md') {
                 width: auto;
                 flex-grow: 1;
                 justify-content: space-between;
                 align-items: center;
                 display: flex !important;
             }
-            color: var(--color-font-title);
-            z-index: 2;
-            width: 100%;
-            display: block;
 
             &-start {
-                @include responsive('md') {
+                padding-bottom: 1rem;
+                border-bottom-width: 1px;
+
+                @include vars.responsive('md') {
                     padding-bottom: 0;
                     flex-grow: 1;
                     display: flex;
                     border-bottom-width: 0;
                     margin-left: 4rem;
                 }
-
-                padding-bottom: 1rem;
-                border-bottom-width: 1px;
             }
 
             &-end {
-                @include responsive('md') {
+                @include vars.responsive('md') {
                     margin-right: 2rem;
                     margin-left: 2rem;
                 }
@@ -100,9 +103,35 @@
                     margin-right: 2rem;
                 }
 
-                display: flex;
-                margin-top: .5rem;
-                margin-bottom: .5rem;
+                .theme-toggle {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    position: relative;
+
+                    .theme-icon {
+                        display: inline-block;
+                        transition: opacity 0.3s ease;
+                    }
+
+                    .dark-icon {
+                        opacity: 1;
+                    }
+
+                    .light-icon {
+                        opacity: 0;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                & {
+                    display: flex;
+                    margin-top: .5rem;
+                    margin-bottom: .5rem;
+                }
             }
         }
     }

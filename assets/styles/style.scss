@@ -1,16 +1,16 @@
-@import "vars";
-@import "global";
+@use "vars";
+@use "global";
 
-@import "partials/header";
-@import "partials/footer";
-@import "partials/toc";
-@import "partials/btop";
+@use "partials/header";
+@use "partials/footer";
+@use "partials/toc";
+@use "partials/btop";
 
-@import "pages/404";
-@import "pages/single";
-@import "pages/archive";
-@import "pages/list";
+@use "pages/notfound";
+@use "pages/single";
+@use "pages/archive";
+@use "pages/list";
 
-@import "design/reset";
-@import "design/markdown";
-@import "design/prism";
+@use "design/reset";
+@use "design/markdown";
+@use "design/prism";

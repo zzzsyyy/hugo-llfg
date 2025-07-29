@@ -1,3 +1,5 @@
+@use "../vars";
+
 .container {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -11,7 +13,7 @@
             margin-top: 4rem;
             padding: 10rem 2rem 10rem 2rem;
             overflow: hidden;
-            border-radius: $radius-sm;
+            border-radius: vars.$radius-sm;
             background-color: var(--color-body);
             display: flex;
             justify-content: flex-end;

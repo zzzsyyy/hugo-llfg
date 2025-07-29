@@ -1,4 +1,4 @@
-{{ if and .Params.math .IsPage }}
+{{ if or (and .Params.math .IsPage) (eq .Section "notes") }}
 {{ $assets := .Site.Data.assets }}
 <link rel="stylesheet" href="{{ printf $assets.katex.css.url $assets.katex.version }}" crossorigin="anonymous">
 <script defer src="{{ printf $assets.katex.js.url $assets.katex.version }}" crossorigin="anonymous"></script>

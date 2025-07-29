@@ -57,6 +57,11 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+  
+  if (document.getElementById('TableOfContents')) {
+    activateNavElementOnScroll();
+  }
+  
   switchBurger();
 });
 setTimeout(() => {
@@ -100,7 +105,6 @@ const rootElement = document.documentElement;
 const darkModeStorageKey = 'user-color-scheme';
 const darkModeMediaQueryKey = '--color-mode';
 const rootElementDarkModeAttributeName = 'data-user-color-scheme';
-const darkModeTogglebuttonElement = document.getElementById('toggle-mode');
 
 const setLS = (k, v) => {
   try {
@@ -118,37 +122,18 @@ const getLS = (k) => {
   try {
     return localStorage.getItem(k);
   } catch (e) {
-    return null // 与 localStorage 中没有找到对应 key 的行为一致
+    return null
   }
 }
 
 const getModeFromCSSMediaQuery = () => {
-  // 使用 matchMedia API 的写法会优雅的多
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
 const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  document.body.removeAttribute(rootElementDarkModeAttributeName);
   removeLS(darkModeStorageKey);
 }
-
-// document.getElementById('toggle-mode').addEventListener('click', () => {
-//   let nowTheme = getNowTheme();
-//   let domTheme = document.body.getAttribute('data-theme');
-//   let systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-//   if (domTheme === 'auto') {
-//       document.body.setAttribute('data-theme', nowTheme === 'light' ? 'dark' : 'light');
-//       localStorage.setItem('fuji_data-theme', nowTheme === 'light' ? 'dark' : 'light');
-//   } else if (domTheme === 'light') {
-//       document.body.setAttribute('data-theme', 'dark');
-//       localStorage.setItem('fuji_data-theme', systemTheme === 'dark' ? 'auto' : 'dark');
-//   } else {
-//       document.body.setAttribute('data-theme', 'light');
-//       localStorage.setItem('fuji_data-theme', systemTheme === 'light' ? 'auto' : 'light');
-//   }
-// }
-// )
 
 const validColorModeKeys = {
   'dark': true,
@@ -156,17 +141,13 @@ const validColorModeKeys = {
 }
 
 const applyCustomDarkModeSettings = (mode) => {
-  // 接受从「开关」处传来的模式，或者从 localStorage 读取
   const currentSetting = mode || getLS(darkModeStorageKey);
 
   if (currentSetting === getModeFromCSSMediaQuery()) {
-    // 当用户自定义的显示模式和 prefers-color-scheme 相同时重置、恢复到自动模式
     resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) { // 相比 Array#indexOf，这种写法 Uglify 后字节数更少
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else if (validColorModeKeys[currentSetting]) {
+    document.body.setAttribute(rootElementDarkModeAttributeName, currentSetting);
   } else {
-    // 首次访问或从未使用过开关、localStorage 中没有存储的值，currentSetting 是 null
-    // 或者 localStorage 被篡改，currentSetting 不是合法值
     resetRootDarkModeAttributeAndLS();
   }
 }
@@ -180,25 +161,24 @@ const toggleCustomDarkMode = () => {
   let currentSetting = getLS(darkModeStorageKey);
   
   if (validColorModeKeys[currentSetting]) {
-    // 从 localStorage 中读取模式，并取相反的模式
     currentSetting = invertDarkModeObj[currentSetting];
   } else if (currentSetting === null) {
-    // localStorage 中没有相关值，或者 localStorage 抛了 Error
-    // 从 CSS 中读取当前 prefers-color-scheme 并取相反的模式
     currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
   } else {
-    // 不知道出了什么幺蛾子，比如 localStorage 被篡改成非法值
-    return; // 直接 return;
+    return;
   }
-  // 将相反的模式写入 localStorage
   setLS(darkModeStorageKey, currentSetting);
 
   return currentSetting;
 }
 
-applyCustomDarkModeSettings();
-
-darkModeTogglebuttonElement.addEventListener('click', () => {
-  // 当用户点击「开关」时，获得新的显示模式、写入 localStorage、并在页面上生效
-  applyCustomDarkModeSettings(toggleCustomDarkMode());
-})
+document.addEventListener('DOMContentLoaded', function() {
+  applyCustomDarkModeSettings();
+  
+  const darkModeTogglebuttonElement = document.getElementById('toggle-mode');
+  if (darkModeTogglebuttonElement) {
+    darkModeTogglebuttonElement.addEventListener('click', () => {
+      applyCustomDarkModeSettings(toggleCustomDarkMode());
+    });
+  }
+});

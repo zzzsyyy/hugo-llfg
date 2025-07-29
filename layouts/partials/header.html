@@ -21,9 +21,14 @@
                 {{ end }}
             </div>
             <div class="navbar-menu-end">
-                <a class="navbar-item" title="切换暗色模式">
-                    {{ partial "fontawesome.html" "moon" }}
-                </a>
+                <button id="toggle-mode" class="navbar-item theme-toggle" title="切换暗色模式" aria-label="切换暗色模式">
+                    <span class="theme-icon light-icon">
+                        {{ partial "fontawesome.html" "sun" }}
+                    </span>
+                    <span class="theme-icon dark-icon">
+                        {{ partial "fontawesome.html" "moon" }}
+                    </span>
+                </button>
                 <a class="navbar-item" title="订阅 XML" href="/index.xml">
                     {{ partial "fontawesome.html" "rss" }}
                 </a>

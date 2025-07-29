@@ -1,12 +1,14 @@
+@use "../vars";
+
 .back-to-top {
-    border-radius: $radius-md;
+    border-radius: vars.$radius-md;
     position: fixed;
     right: 30px;
     z-index: 1050;
     padding: .3rem .5rem;
     width: initial;
     background: var(--color-font-aux);
-    font-size: $font-xs;
+    font-size: vars.$font-xs;
     opacity: 0.6;
     color: #fff;
     cursor: pointer;

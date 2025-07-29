@@ -1,3 +1,5 @@
+@use "../vars";
+
 .post,.list{
     &_container{
         display: grid;
@@ -7,12 +9,12 @@
     }
 
     &_content{
-        @include responsive('md'){
+        @include vars.responsive('md'){
             grid-column: 2/11;
         }
         grid-column: 1/15;
         padding: 2rem 1.5rem;
-        border-radius: $radius-sm;
+        border-radius: vars.$radius-sm;
         background: var(--color-body);
     }
 }
@@ -47,7 +49,7 @@
         margin-top: 1rem;
     }
 
-    @include responsive(md) {
+    @include vars.responsive(md) {
         justify-content: space-between;
         flex-direction: row;
 

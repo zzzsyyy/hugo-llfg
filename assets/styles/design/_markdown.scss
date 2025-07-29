@@ -1,7 +1,9 @@
-@import "../colors.scss";
-@import "prism.scss";
-@include prism-full;
-@include prism-style;
+@use "../colors.scss";
+@use "prism.scss";
+@use "../vars";
+
+@include colors.prism-full;
+@include prism.prism-style;
 
 .markdown {
 
@@ -16,7 +18,7 @@
 
     pre {
         background-color: var(--color-body-aux);
-        border-radius: $radius-sm;
+        border-radius: vars.$radius-sm;
         padding: 0 !important;
         position: relative;
         white-space: pre-wrap;
@@ -25,7 +27,7 @@
             content: attr(data-lang);
             position: absolute;
             right: 1rem;
-            font-size: $font-lg;
+            font-size: vars.$font-lg;
             font-weight: 700;
             color: var(--color-font);
             opacity: .25;
@@ -34,7 +36,7 @@
         code {
             display: block;
             font-variant-ligatures: normal;
-            font-size: $font-sm;
+            font-size: vars.$font-sm;
             scrollbar-width: thin;
             color: currentColor;
             background-color: transparent;
@@ -48,7 +50,7 @@
         color: inherit;
         display: inline;
         background-color: var(--color-bg-aux);
-        border-radius: $radius-sm;
+        border-radius: vars.$radius-sm;
         padding: 0.125rem 0.35rem 0.1rem;
     }
 
@@ -57,13 +59,13 @@
     }
 
     blockquote {
-        font-size: $font-md;
+        font-size: vars.$font-md;
         border-left-style: solid;
         border-left-width: 3px;
-        border-color: #e3e6eb;
+        border-color: var(--color-border);
         padding: 0.75rem 1rem;
         color: var(--color-font-aux);
-        background-color: var(--color-bg-active);
+        background-color: var(--color-bg-aux);
         margin: 1.5rem 0 1.5rem 1rem;
     }
 
@@ -124,7 +126,7 @@
         border-width: 1.2px;
         border-style: solid;
         word-break: break-word;
-        border-color: #e3e6eb;
+        border-color: var(--color-border);
         overflow: auto;
         border-spacing: 0;
         width: max-content;
@@ -133,18 +135,18 @@
     }
 
     tbody>tr:nth-child(2n+1) {
-        background-color: #f4f5f7;
+        background-color: var(--color-bg-aux);
     }
 
     th {
         font-weight: 700;
-        color: #475c6e;
+        color: var(--color-font-title);
     }
 
     td,
     th {
         padding: .375rem .5rem;
-        border: 1px solid #e3e6eb;
+        border: 1px solid var(--color-border);
     }
 
     img {
@@ -168,7 +170,7 @@
     }
 
     .footnotes {
-        font-size: $font-sm;
+        font-size: vars.$font-sm;
       }
 
 }

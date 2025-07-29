@@ -1,11 +1,13 @@
+@use "../vars";
+
 .post-toc {
-  @include responsive('md'){
+  @include vars.responsive('md'){
     grid-column: 11/14;
     display: block;
   }
   display: none;
   padding: 2rem 1.5rem 2rem 1.5rem;
-  border-radius: $radius-md;
+  border-radius: vars.$radius-md;
   background-color: var(--color-body);
 
   #sticky_toc {

@@ -1,5 +1,5 @@
 [prismjs]
-version = "1.29.0"
+version = "1.30.0"
 
   [prismjs.css]
     url = "https://cdn.jsdelivr.net/npm/prismjs@%s/themes/prism.min.css"
@@ -9,7 +9,7 @@ version = "1.29.0"
     url = "https://cdn.jsdelivr.net/npm/prismjs@%s/plugins/autoloader/prism-autoloader.min.js"
 
 [katex]
-    version = "0.16.9"
+    version = "0.16.22"
 
     [katex.css]
       url = "https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css"

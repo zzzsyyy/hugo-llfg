@@ -48,6 +48,14 @@
   body[data-theme='dark'] {
     @include colors-dark;
   }
+
+  body[data-user-color-scheme='light'] {
+    @include colors-light;
+  }
+
+  body[data-user-color-scheme='dark'] {
+    @include colors-dark;
+  }
 }
 
 @mixin prism-light {
@@ -71,6 +79,7 @@
   --color-prism-green: #8ec298;
   --color-prism-yellow: #e3c26a;
   --color-prism-orange: #ee869a;
+  --color-prism-dpink : #d55f8c;
 }
 
 @mixin prism-full {
@@ -87,6 +96,14 @@
   }
 
   body[data-theme='dark'] {
+    @include prism-dark;
+  }
+
+  body[data-user-color-scheme='light'] {
+    @include prism-light;
+  }
+
+  body[data-user-color-scheme='dark'] {
     @include prism-dark;
   }
 }
